@@ -1,8 +1,6 @@
 // #Typography
 
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-  font-weight: inherit;
-}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { font-weight: inherit; }
 
 h1 {
   color: $heading_colour;
@@ -56,17 +54,12 @@ h6 {
   line-height: $heading6_line_height;
 }
 
-.subheader {
-  color: $subheader_colour;
-}
+.subheader { color: $subheader_colour; }
 
-p {
+p { 
   margin: $paragraph_margin;
   line-height: $paragraph_line_height;
-}
-
-p img {
-  margin: $paragraph_image_margin;
+  img { margin: $paragraph_image_margin; }
 }
 
 .lead {
@@ -75,18 +68,14 @@ p img {
   color: $paragraph_lead_colour;
 }
 
-em {
-  font-style: $em_font_style;
-}
+em { font-style: $em_font_style; }
 
 strong {
   font-weight: bold;
   color: $strong_colour;
 }
 
-small {
-  font-size: $small_font_size;
-}
+small { font-size: $small_font_size; }
 
 blockquote, blockquote p {
   font-size: $blockquote_font_size;
@@ -105,12 +94,7 @@ blockquote cite {
   display: block;
   font-size: $blockquote_cite_font_size;
   color: $blockquote_cite_colour;
+  &:before { content: "\2014 \0020"; }
 }
 
-blockquote cite:before {
-  content: "\2014 \0020";
-}
-
-blockquote cite a, blockquote cite a:visited, blockquote cite a:visited {
-  color: $blockquote_cite_link_colour;
-}
+blockquote cite a, blockquote cite a:visited, blockquote cite a:visited { color: $blockquote_cite_link_colour; }

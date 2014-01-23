@@ -1,7 +1,6 @@
 // #Buttons
 // ##Normal
-.button,
-button,
+.button, button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
@@ -13,7 +12,7 @@ input[type="button"] {
   font-size: $form_button_font_size;
   font-weight: bold;
   text-decoration: none;
-  text-shadow: $form_button_text_shadow;
+  @include text-shadow($form_button_text_shadow);
   cursor: pointer;
   margin: $form_input_margin;
   line-height: $form_button_line_height;
@@ -22,8 +21,7 @@ input[type="button"] {
 }
 
 // ##Hover
-.button:hover,
-button:hover,
+.button:hover, button:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover,
 input[type="button"]:hover {
@@ -33,8 +31,7 @@ input[type="button"]:hover {
 }
 
 // ##Active
-.button:active,
-button:active,
+.button:active, button:active,
 input[type="submit"]:active,
 input[type="reset"]:active,
 input[type="button"]:active {
@@ -43,8 +40,7 @@ input[type="button"]:active {
 }
 
 // ##Full width
-.button .full-width,
-button.full-width,
+.button .full-width, button.full-width,
 input[type="submit"].full-width,
 input[type="reset"].full-width,
 input[type="button"].full-width {
@@ -55,8 +51,7 @@ input[type="button"].full-width {
 }
 
 // ##Fix for odd Mozilla border & padding issues
-button::-moz-focus-inner,
-input::-moz-focus-inner {
+button::-moz-focus-inner, input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
@@ -67,20 +62,15 @@ input::-moz-focus-inner {
   ##General margins (all sides)
   Applied to both form, and fieldset
 */
-form {
-  margin: $form_fieldset_margin;
-}
+form { margin: $form_fieldset_margin; }
 
-fieldset {
-  margin: $form_fieldset_margin;
-}
+fieldset { margin: $form_fieldset_margin; }
 
 /*
   ##Search/URL fields
   Make these behave as text fields
 */
-input[type="search"],
-input[type="url"] {
+input[type="search"], input[type="url"] {
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
 }
@@ -89,15 +79,11 @@ input[type="url"] {
   ##General form element styles, border etc.
   Applied to all except checkboxes
 */
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="search"],
-input[type="url"],
-input[type="number"],
-input[type="tel"],
-textarea,
-select {
+input[type="text"], input[type="password"],
+input[type="email"], input[type="search"],
+input[type="url"], input[type="number"],
+input[type="tel"], 
+textarea, select {
   border: $form_input_border;
   padding: $form_input_padding;
   @include border-radius($form_input_border_radius);
@@ -123,45 +109,39 @@ select {
   ##Form element focus styles
   Applied to all except checkboxes and selects
 */
-input[type="text"]:focus,
-input[type="password"]:focus,
-input[type="email"]:focus,
-input[type="search"]:focus,
-input[type="url"]:focus,
-input[type="number"]:focus,
-input[type="tel"]:focus,
-textarea:focus {
-  border: $form_input_focus_border;
-  color: $form_input_focus_text_colour;
-  outline: $form_input_focus_outline;
-  @include box-shadow($form_input_focus_box_shadow_x, $form_input_focus_box_shadow_y, $form_input_focus_box_shadow_blur, $form_input_focus_box_shadow_colour)
+input[type="text"], input[type="password"],
+input[type="email"], input[type="search"],
+input[type="url"], input[type="number"],
+input[type="tel"], textarea {
+  &:focus {
+    border: $form_input_focus_border;
+    color: $form_input_focus_text_colour;
+    outline: $form_input_focus_outline;
+    @include box-shadow($form_input_focus_box_shadow_x, $form_input_focus_box_shadow_y, $form_input_focus_box_shadow_blur, $form_input_focus_box_shadow_colour)
+  }
 }
 
 // ##Textarea min height
-textarea {
-  min-height: $form_textarea_min_height;
-}
+textarea { min-height: $form_textarea_min_height; }
 
 // ##Label/legend font settings
-label,
-legend {
+label, legend {
   display: block;
   font-weight: $legend_font_weight;
   font-size: $legend_font_size;
 }
 
 // ##Checkbox display
-input[type="checkbox"] {
-  display: $form_input_checkbox_display;
-}
+input[type="checkbox"] { display: $form_input_checkbox_display; }
 
 /*
   ##Spans inside legends, or labels
   Alters font size, weight and colour based on variables
 */
-label span,
-legend span {
-  font-weight: $form_label_legend_font_weight;
-  font-size: $form_input_font_size;
-  color: $form_label_legend_colour;
+label, legend {
+  span {
+    font-weight: $form_label_legend_font_weight;
+    font-size: $form_input_font_size;
+    color: $form_label_legend_colour;
+  }
 }

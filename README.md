@@ -2,6 +2,9 @@ Ribs v1.0.11
 =============
 > Ribs is the evolution of Skeleton, the original author seems to have disappeared and/or lost interest in the project, and my colleagues and I use this an awful lot.
 
+## Spair
+> To do: Add text-shadow mixin to enhance browser compatibility.
+
 ## What's different here?
 My fork has one significant difference over the original project, that is a full SCSS conversion to make use of more modern technologies and to expose a lot more customisation options quickly and easily.
 

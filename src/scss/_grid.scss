@@ -28,12 +28,8 @@
   position: relative;
   margin: 0 auto;
   padding: 0;
-  & .alpha {
-    margin-left: 0;
-  }
-  & .omega {
-    margin-right: 0;
-  }
+  & .alpha { margin-left: 0; }
+  & .omega { margin-right: 0; }
 }
 
 .column, .columns {
@@ -47,24 +43,17 @@
   margin-left: 0;
 }
 
-.row {
-  margin-bottom: $gutter;
-}
-
+.row { margin-bottom: $gutter; }
 
 // #Desktop Grid
 @include grid($desktop-container-width, $column-count, $gutter);
 
-//-----------------------------------------------------------------------
 // #Tablet Grid
 @media only screen and (max-width: $tablet-max-breakpoint) {
   @include grid($tablet-container-width, $column-count, $gutter);
-
-  .container {
-    width: $tablet-container-width;
-  }
+  .container { width: $tablet-container-width; }
 }
-//--------------------------------------------------------------------
+
 /*
   #Mobile Grid
   Every column element in this grid is the total grid width
@@ -73,48 +62,18 @@
 @media only screen and (max-width: $mobile-max-breakpoint) {
   .container {
     width: $mobile-container-width;
-    & .one,
-    & .two,
-    & .three,
-    & .four,
-    & .five,
-    & .six,
-    & .seven,
-    & .eight,
-    & .nine,
-    & .ten,
-    & .eleven,
-    & .twelve,
-    & .thirteen,
-    & .fourteen,
-    & .fifteen,
-    & .sixteen,
-    & .one-third,
-    & .two-thirds,
-    & .one-half,
-    & .one-quarter,
-    & .three-quarters
-    { width: $mobile-column-width; }
-
-    .column, .columns {
-      margin: 0;
-    }
-
-    .offset-by-one,
-    .offset-by-two,
-    .offset-by-three,
-    .offset-by-four,
-    .offset-by-five,
-    .offset-by-six,
-    .offset-by-seven,
-    .offset-by-eight,
-    .offset-by-nine,
-    .offset-by-ten,
-    .offset-by-eleven,
-    .offset-by-twelve,
-    .offset-by-thirteen,
-    .offset-by-fourteen,
-    .offset-by-fifteen { padding-left: 0; }
+    & .one, & .two, & .three, & .four,
+    & .five, & .six, & .seven, & .eight,
+    & .nine, & .ten, & .eleven, & .twelve,
+    & .thirteen, & .fourteen, & .fifteen,
+    & .sixteen, & .one-third, & .two-thirds,
+    & .one-half, & .one-quarter, & .three-quarters { width: $mobile-column-width; }
+    .column, .columns { margin: 0; }
+    .offset-by-one, .offset-by-two, .offset-by-three,
+    .offset-by-four, .offset-by-five, .offset-by-six,
+    .offset-by-seven, .offset-by-eight, .offset-by-nine,
+    .offset-by-ten, .offset-by-eleven, .offset-by-twelve,
+    .offset-by-thirteen, .offset-by-fourteen, .offset-by-fifteen { padding-left: 0; }
   }
 }
 
@@ -141,16 +100,15 @@
  Use this clearfix class on parent to clear nested columns, or:
  wrap each row of columns in a ```<div class="row">...</div>```
 */
-.clearfix:before,
-.clearfix:after,
-.row:before,
-.row:after {
-  content: '\0020';
-  display: block;
-  overflow: hidden;
-  visibility: hidden;
-  width: 0;
-  height: 0;
+.clearfix, .row{
+  &:before, &:after {
+    content: '\0020';
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
 }
 /*
   ##Auto-applied clearfix for .row elements
@@ -159,14 +117,10 @@
     This element has clearfix applied in browsers that support the :after css selector
   </div>```
 */
-.row:after,
-.clearfix:after {
-  clear: both;
+.row, .clearfix{
+  &:after { clear: both; }
 }
-
-.row, .clearfix {
-  zoom: 1;
-}
+.row, .clearfix { zoom: 1; }
 
 /*
   ##Block level clear

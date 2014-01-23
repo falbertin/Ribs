@@ -18,9 +18,7 @@
   width: $width;
 }
 
-@mixin square($size) {
-  @include size($size, $size);
-}
+@mixin square($size) { @include size($size, $size); }
 
 @mixin border-radius($radius) {
   -webkit-border-radius: $radius;
@@ -116,12 +114,9 @@
 }
 
 @mixin grid($grid-container-width, $grid-column-count:$column-count, $grid-gutter:$gutter) {
-
   $grid-column-width: $grid-container-width/$grid-column-count;
-
   .container {
     width: $grid-container-width;
-
     .one         { width: (1*$grid-column-width - $grid-gutter); }
     .two         { width: (2*$grid-column-width - $grid-gutter); }
     .three       { width: (3*$grid-column-width - $grid-gutter); }
